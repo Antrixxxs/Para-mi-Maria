@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Un correo para ti mi niña 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff;
+      margin: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 90%;
+      max-width: 600px;
+      animation: fadeIn 0.8s ease;
+    }
+    #screen5.active {
+      display: block;
+      height: auto;
+      padding: 40px 0;
+    }
+    .active { display: flex; }
+    h2 { margin-bottom: 20px; font-size: 1.5rem; }
+    .main-img {
+      width: 280px;
+      height: auto;
+      cursor: pointer;
+    }
+    .card {
+      background: repeating-linear-gradient(white, white 28px, #e3e3e3 29px);
+      padding: 30px 40px;
+      border: 1px solid #e5e5e5;
+      width: 100%;
+      max-width: 800px;
+      text-align: left;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .card h3, .card p { font-family: 'Dancing Script', cursive; color: #555; line-height: 1.6; margin: 10px 0; }
+    .card h3 { font-size: 2.2em; }
+    .card p { font-size: 1.4em; text-align: justify; }
+    .music-section { text-align: center; margin-top: 40px; }
+    .bunny-guitar { width: 120px; height: auto; margin-bottom: 10px; }
+    .spotify-link { font-family: 'Poppins', sans-serif; color: #1DB954; text-decoration: none; font-weight: 600; border-bottom: 1px solid #1DB954; }
+    .return-btn { display: block; margin: 30px auto 0 auto; padding: 10px 25px; background-color: #ff4f81; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
+  </style>
+</head>
+<body>
+
+  <div class="screen active" id="screen1">
+    <h2>Hola, te llegó un correo</h2>
+    <img src="img/1.gif" alt="Correo" class="main-img" onclick="nextScreen(2)">
+  </div>
+
+  <div class="screen" id="screen2">
+    <h2>Una cartita para ti</h2>
+    <img src="img/2.gif" alt="Carta" class="main-img" onclick="nextScreen(3)">
+  </div>
+
+  <div class="screen" id="screen3">
+    <h2>¡Ábrelo!</h2>
+    <img src="img/3.gif" alt="Sobre" class="main-img" onclick="nextScreen(4)">
+  </div>
+
+  <div class="screen" id="screen4">
+    <h2>¿Qué dirá?</h2>
+    <img src="img/4.gif" alt="Carta lista" class="main-img" onclick="nextScreen(5)">
+  </div>
+
+  <div class="screen" id="screen5">
+    <div class="card">
+      <h3>Mi bella Maria</h3>
+      <p>No se muy bien como comenzar con esta carta por el poco tiempo que llevamos pero tuve la necesidad de hacerte esto porque te lo mereces y más... Hasta seguiría aprendiendo a programar solo con el hecho de hacerte algo mejor.</p>
+      <p>Me gusta la forma en como hablas y me haces reir mucho eso me pone muy feliz, y por tolerarme ya que aveces soy algo insoportable pero ya me iras conociendo solo dire en donde te metiste pipipi te toco aguantarme noma bobita jsjs.</p>
+      <p>Eres alguien especial para mí. Que te valoro, te admiro y, sobre todo, te tengo un gran cariño.</p>
+      <p>Con mucho afecto,</p>
+      <p>I love you baby 💌</p>
+
+      <div class="music-section">
+        <img src="img/5.gif" alt="Música" class="bunny-guitar">
+        <p style="font-family: 'Poppins', sans-serif; font-size: 0.8em;">Esta canción te la dedico... ✨</p>
+        <a href="https://open.spotify.com/intl-es/track/7Aobt67JnaF7qN8jCCKvHq?si=521a0c63ddf44a9f" target="_blank" class="spotify-link">Escuchar en Spotify</a>
+      </div>
+    </div>
+    <button class="return-btn" onclick="nextScreen(1)">🔙 Regresar</button>
+  </div>
+
+  <script>
+    function nextScreen(num) {
+      window.scrollTo(0, 0); 
+      const current = document.querySelector(".screen.active");
+      if (current) current.classList.remove("active");
+      document.getElementById("screen" + num).classList.add("active");
+    }
+  </script>
+</body>
+</html>
